@@ -13,6 +13,18 @@ const receivedUnitsSchema = new mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         required:[true , "from where or from whom the units were received is missings."]
     },
+    prescription:{
+        type:String,
+        required:[true , "prescription is missing."],
+    },
+    prescribedBy:{
+        type:String,
+        required:[true , "who have prescribed ? is missing."],
+    },
+    hospitalName:{
+        type:String,
+        required:[true , "Hospital name is missing."],
+    },
     paymentId:{
         type:mongoose.Schema.Types.ObjectId,
         default:0,
