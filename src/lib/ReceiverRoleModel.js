@@ -12,10 +12,6 @@ const receiverRoleSchema = new mongoose.Schema({
     pendingUnits:{
         type:[mongoose.Schema.Types.ObjectId],
     },
-    paymentId:{
-        type:mongoose.Schema.Types.ObjectId,
-        default:0,
-    },
 })
 
 
