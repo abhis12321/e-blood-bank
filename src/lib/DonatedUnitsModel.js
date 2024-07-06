@@ -11,7 +11,7 @@ const donatedUnitsSchema = new mongoose.Schema({
     },
     donatedTo:{
         type:mongoose.Schema.Types.ObjectId,
-        required:[true , "where of to whom the units were donated is missings."]
+        required:[true , "where or to whom the units were donated is missings."]
     },
     date:{
         type:Date,
