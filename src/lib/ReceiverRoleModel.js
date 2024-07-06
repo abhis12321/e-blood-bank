@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const donorRoleSchema = new mongoose.Schema({
+const receiverRoleSchema = new mongoose.Schema({
     userId:{
         type:mongoose.Schema.Types.ObjectId,
         required:[true , "userId is missing"],
@@ -12,11 +12,11 @@ const donorRoleSchema = new mongoose.Schema({
     pendingUnits:{
         type:[mongoose.Schema.Types.ObjectId],
     },
-    coins:{
-        type:Number,
+    paymentId:{
+        type:mongoose.Schema.Types.ObjectId,
         default:0,
     },
 })
 
 
-export const DonorRole = mongoose.models.DonorRole || mongoose.model("DonorRole" , donorRoleSchema);
+export const ReceiverRole = mongoose.models.ReceiverRole || mongoose.model("ReceiverRole" , receiverRoleSchema);
