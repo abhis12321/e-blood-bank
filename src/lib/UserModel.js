@@ -28,8 +28,16 @@ const userSchema = new mongoose.Schema({
             message: "Please select correct blood-group"
         }
     },
-    age: {
-        type: Number,
+    gender: {
+        type: String,
+        required: [true, "please specify your gender."],
+        enum: {
+            values: ["male", "female", "others"],
+            message: "Please select correct gender"
+        }
+    },
+    DoB: {
+        type: Date,
         required: [true, "user's age is missing."]
     },
     address: {
