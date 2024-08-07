@@ -3,7 +3,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 
-export default function UserRegistation() {
+export default function UserRegistation({ setOption }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -42,9 +42,9 @@ export default function UserRegistation() {
     event.preventDefault();
     let body = { name, email, phoneNo, aadharNo, DoB: new Date(DoB), address, gender, bloodGroup, password, coordinates }
 
-    axios.post('/api', body)
+    axios.post('/api/users', body)
       .then(response => response.data)
-      .then(data => alert(data.message))
+      .then(data => alert(data.message) | (data.success && setOption(0)))
       .catch(error => console.log(error.message))
   }
 
@@ -109,7 +109,8 @@ export default function UserRegistation() {
         </div>
 
 
-        <div className="flex justify-center items-end w-full max-w-[610px]">
+        <div className="flex justify-center items-end w-full gap-2">
+          <button className='w-full max-w-[300px] py-[6px] px-8 ring-1 ring-orange-800 bg-orange-800 hover:bg-orange-600 active:bg-violet-700 rounded text-white font-serif text-sm' onClick={setOption}>cancel</button>
           <input type="submit" value="register" className='w-full max-w-[300px] py-[6px] px-8 ring-1 ring-red-800 bg-red-800 hover:bg-red-600 active:bg-violet-700 rounded text-white font-serif text-sm' />
         </div>
       </form>

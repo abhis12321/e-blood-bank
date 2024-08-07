@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import AuthenticationProvider from "./__components/AuthenticationProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,9 +12,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-gray-100`}>
-        {children}
-      </body>
+      <AuthenticationProvider>
+        <body className={`${inter.className} bg-gray-100`}>
+          {children}
+        </body>
+      </AuthenticationProvider>
     </html>
   );
 }
