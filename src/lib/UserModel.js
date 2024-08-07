@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
+import { dbConnect } from "./dbConnect";
 
+dbConnect();
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -9,6 +11,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, "email is missing."],
         unique:[true , "this email is already registered"],
+    },
+    password: {
+        type: String,
+        required: [true, "password is missing."],
     },
     phoneNo: {
         type: Number,
