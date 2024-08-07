@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import UserRegistation from '../__components/UserRegistation'
 import UserLogin from '../__components/UserLogin';
 import { useAuthentication } from '../__components/AuthenticationProvider';
+import UserProfile from '../__components/UserProfile';
 
 export default function page() {
   const [option , setOption] = useState(0);
@@ -11,7 +12,7 @@ export default function page() {
 
   return (
     <>{
-      USER?.user ? <h1>{USER?.user?.name}</h1>
+      USER?.user ? <UserProfile user={USER?.user} />
       :
       option == 0 ? <UserLogin setOption={setOption} USER={USER}/>
       :

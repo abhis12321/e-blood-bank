@@ -49,54 +49,57 @@ export default function UserRegistation({ setOption }) {
   }
 
   return (
-    <div className='fixed top-0 bottom-0 w-[100vw] min-h-[100vh] flex items-center justify-center'>
-      <form className="flex flex-wrap gap-2 items-center justify-center py-3 px-3 sm:px-5 lg:px-8 w-[98%] max-w-[800px] bg-white rounded-md shadow-[1px_7px_15px_black_inset]" onSubmit={handleSubmit}>
+    <div className='w-full min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-auto py-4'>
+      <form className="flex flex-wrap sm:gap-2 items-center justify-center sm:justify-between py-4 px-3 sm:px-5 lg:px-8 w-[98%] xs:w-[80%] sm:w-full max-w-[645px] bg-white rounded-md shadow-[1px_7px_15px_black_inset]" onSubmit={handleSubmit}>
         <div className="w-full text-2xl font-mono font-extrabold text-center text-red-950">Enter your details</div>
-        <div className="flex flex-col justify-center w-full md:w-[48%] max-w-[300px]">
+        <div className="flex flex-col justify-center w-full sm:w-[48%] max-w-[300px]">
           <label htmlFor="name" className='text-[10px] font-semibold text-violet-800/70 after:content-["*"] after:ml-0.5 after:text-red-500/90 after:text-[.8rem]'>name</label>
-          <input type="text" className="w-full py-[6px] px-3 font-mono bg-blue-700/15 ring-1 rounded outline-none focus:ring-violet-800 focus:bg-violet-800/15 text-sm" placeholder='enter you name' id='name' value={name} onChange={e => setName(e.target.value)} required />
+          <input type="text" className="w-full font-mono bg-blue-700/15 ring-1 rounded outline-none focus:ring-violet-800 focus:bg-violet-800/15 focus:shadow-[0_0_8px_black_inset] text-sm py-[6px] px-3" placeholder='enter you name' id='name' value={name} onChange={e => setName(e.target.value)} required />
         </div>
-        <div className="flex flex-col justify-center w-full md:w-[48%] max-w-[300px]">
+        <div className="flex flex-col justify-center w-full sm:w-[48%] max-w-[300px]">
           <label htmlFor="email" className='text-[10px] font-semibold text-violet-800/70 after:content-["*"] after:ml-0.5 after:text-red-500/90 after:text-[.8rem]'>email</label>
-          <input type="text" className="w-full py-[6px] px-3 font-mono bg-blue-700/15 ring-1 rounded outline-none focus:ring-violet-800 focus:bg-violet-800/15 text-sm" placeholder='enter you email' id='email' value={email} onChange={e => setEmail(e.target.value)} required />
+          <input type="text" className="w-full font-mono bg-blue-700/15 ring-1 rounded outline-none focus:ring-violet-800 focus:bg-violet-800/15 focus:shadow-[0_0_8px_black_inset] text-sm py-[6px] px-3" placeholder='enter you email' id='email' value={email} onChange={e => setEmail(e.target.value)} required />
         </div>
-        <div className="flex flex-col justify-center w-full md:w-[48%] max-w-[300px]">
+        <div className="flex flex-col justify-center w-full sm:w-[48%] max-w-[300px]">
           <label htmlFor="password" className='text-[10px] font-semibold text-violet-800/70 after:content-["*"] after:ml-0.5 after:text-red-500/90 after:text-[.8rem]'>password</label>
-          <input type="password" className="w-full py-[6px] px-3 font-mono bg-blue-700/15 ring-1 rounded outline-none focus:ring-violet-800 focus:bg-violet-800/15 text-sm" placeholder='password' id='password' value={password} onChange={e => setPassword(e.target.value)} required />
+          <input type="password" className="w-full font-mono bg-blue-700/15 ring-1 rounded outline-none focus:ring-violet-800 focus:bg-violet-800/15 focus:shadow-[0_0_8px_black_inset] text-sm py-[6px] px-3" placeholder='password' id='password' value={password} onChange={e => setPassword(e.target.value)} required />
         </div>
 
-        <div className="flex flex-col justify-center w-full md:w-[48%] max-w-[300px]">
+        <div className="flex flex-col justify-center w-full sm:w-[48%] max-w-[300px]">
           <label htmlFor="phoneNo" className='text-[10px] font-semibold text-violet-800/70 after:content-["*"] after:ml-0.5 after:text-red-500/90 after:text-[.8rem]'>mobile</label>
-          <input type="number" className="w-full py-[6px] px-3 font-mono bg-blue-700/15 ring-1 rounded outline-none focus:ring-violet-800 focus:bg-violet-800/15 text-sm" placeholder='enter you phone number' id='phoneNo' value={phoneNo} onChange={e => setPhoneNo(e.target.value)} required />
+          <input type="number" className="w-full font-mono bg-blue-700/15 ring-1 rounded outline-none focus:ring-violet-800 focus:bg-violet-800/15 focus:shadow-[0_0_8px_black_inset] text-sm py-[6px] px-3" placeholder='enter you phone number' id='phoneNo' value={phoneNo} onChange={e => setPhoneNo(e.target.value)} required />
         </div>
-        <div className="flex flex-col justify-center w-full md:w-[48%] max-w-[300px]">
+        <div className="flex flex-col justify-center w-full sm:w-[48%] max-w-[300px]">
           <label htmlFor="aadharNo" className='text-[10px] font-semibold text-violet-800/70 after:content-["*"] after:ml-0.5 after:text-red-500/90 after:text-[.8rem]'>aadhar</label>
-          <input type="number" className="w-full py-[6px] px-3 font-mono bg-blue-700/15 ring-1 rounded outline-none focus:ring-violet-800 focus:bg-violet-800/15 text-sm" placeholder='enter you Aadhar number' id='aadharNo' value={aadharNo} onChange={e => setAadharNo(e.target.value)} required />
+          <input type="number" className="w-full font-mono bg-blue-700/15 ring-1 rounded outline-none focus:ring-violet-800 focus:bg-violet-800/15 focus:shadow-[0_0_8px_black_inset] text-sm py-[6px] px-3" placeholder='enter you Aadhar number' id='aadharNo' value={aadharNo} onChange={e => setAadharNo(e.target.value)} required />
         </div>
-        <div className="flex flex-col justify-center w-full md:w-[48%] max-w-[300px]">
+        <div className="flex flex-col justify-center w-full sm:w-[48%] max-w-[300px]">
           <label htmlFor="d.o.b." className='text-[10px] font-semibold text-violet-800/70 after:content-["*"] after:ml-0.5 after:text-red-500/90 after:text-[.8rem]'>D.O.B</label>
-          <input type="date" className="w-full py-[5px] px-3 font-mono bg-blue-700/15 ring-1 rounded outline-none focus:ring-violet-800 focus:bg-violet-800/15 text-sm" placeholder='enter you age' id='d.o.b.' value={DoB} onChange={e => setDoB(e.target.value)} required />
+          <input type="date" className="w-full font-mono bg-blue-700/15 ring-1 rounded outline-none focus:ring-violet-800 focus:bg-violet-800/15 focus:shadow-[0_0_8px_black_inset] text-sm py-[5px] px-3" placeholder='enter you age' id='d.o.b.' value={DoB} onChange={e => setDoB(e.target.value)} required />
         </div>
-        <div className="flex flex-col justify-center w-full md:w-[48%] max-w-[300px]">
+        <div className="flex flex-col justify-center w-full sm:w-[48%] max-w-[300px]">
           <label htmlFor="address" className='text-[10px] font-semibold text-violet-800/70 after:content-["*"] after:ml-0.5 after:text-red-500/90 after:text-[.8rem]'>address</label>
-          <input type="text" className="w-full py-[6px] px-3 font-mono bg-blue-700/15 ring-1 rounded outline-none focus:ring-violet-800 focus:bg-violet-800/15 text-sm" placeholder='enter you address' id='address' value={address} onChange={e => setAddress(e.target.value)} required />
+          <input type="text" className="w-full font-mono bg-blue-700/15 ring-1 rounded outline-none focus:ring-violet-800 focus:bg-violet-800/15 focus:shadow-[0_0_8px_black_inset] text-sm py-[6px] px-3" placeholder='enter you address' id='address' value={address} onChange={e => setAddress(e.target.value)} required />
         </div>
-        <div className="flex flex-col justify-center w-full md:w-[48%] max-w-[300px] bg-green-600/40 px-3 rounded shadow-[0_5px_10px_gray_inset]" onClick={getLocation}>
-          <label className='text-[10px] font-semibold text-violet-800/70 after:content-["*"] after:ml-0.5 after:text-red-500/90 after:text-[.8rem]'>latitude : {coordinates.latitude}</label>
-          <label className='text-[10px] font-semibold text-violet-800/70 after:content-["*"] after:ml-0.5 after:text-red-500/90 after:text-[.8rem]'>longitude : {coordinates.longitude}</label>
+        <div className="flex flex-col justify-center w-full sm:w-[48%] max-w-[300px]" onClick={getLocation}>
+          <label className='text-[10px] font-semibold text-violet-800/70 after:content-["*"] after:ml-0.5 after:text-red-500/90 after:text-[.8rem]'>location</label>
+          <div className='w-full font-mono bg-blue-700/15 ring-1 rounded outline-none active:ring-violet-800 active:bg-violet-800/15 active:shadow-[0_0_8px_black_inset] text-[14px] py-[5px] flex items-center justify-around text-gray-700 cursor-pointer'>
+            <div className="flex">latitude:<span className='text-red-950'>{coordinates.latitude}</span></div>
+            <div className="flex">longitude:<span className='text-red-950'>{coordinates.longitude}</span></div>
+          </div>
         </div>
 
-        <div className="flex flex-col justify-center w-full md:w-[48%] max-w-[300px]">
+        <div className="flex flex-col justify-center w-full sm:w-[48%] max-w-[300px]">
           <label htmlFor="gender" className='text-[10px] font-semibold text-violet-800/70 after:content-["*"] after:ml-0.5 after:text-red-500/90 after:text-[.8rem]'>gender</label>
-          <select name="status" id="gender" className="w-full py-[7px] px-3 font-mono bg-blue-700/15 ring-1 rounded outline-none focus:ring-violet-800 focus:bg-violet-800/15 text-sm" placeholder='male' value={gender} onChange={e => setGender(e.target.value)}>
+          <select name="status" id="gender" className="w-full font-mono bg-blue-700/15 ring-1 rounded outline-none focus:ring-violet-800 focus:bg-violet-800/15 focus:shadow-[0_0_8px_black_inset] text-sm py-[7px] px-3" placeholder='male' value={gender} onChange={e => setGender(e.target.value)}>
             <option value="male" className='bg-slate-950/30'>male</option>
             <option value="female" className='bg-slate-950/30'>female</option>
             <option value="others" className='bg-slate-950/30'>others</option>
           </select>
         </div>
-        <div className="flex flex-col justify-center w-full md:w-[48%] max-w-[300px]">
+        <div className="flex flex-col justify-center w-full sm:w-[48%] max-w-[300px]">
           <label htmlFor="blood-group" className='text-[10px] font-semibold text-violet-800/70 after:content-["*"] after:ml-0.5 after:text-red-500/90 after:text-[.8rem]'>blood group</label>
-          <select name="status" id="blood-group" className="w-full py-[7px] px-3 font-mono bg-blue-700/15 ring-1 rounded outline-none focus:ring-violet-800 focus:bg-violet-800/15 text-sm" placeholder='male' value={bloodGroup} onChange={e => setBloodGroup(e.target.value)}>
+          <select name="status" id="blood-group" className="w-full font-mono bg-blue-700/15 ring-1 rounded outline-none focus:ring-violet-800 focus:bg-violet-800/15 focus:shadow-[0_0_8px_black_inset] text-sm py-[7px] px-3" placeholder='male' value={bloodGroup} onChange={e => setBloodGroup(e.target.value)}>
             <option value="A+" className='bg-slate-950/30'>A+</option>
             <option value="A-" className='bg-slate-950/30'>A-</option>
             <option value="B+" className='bg-slate-950/30'>B+</option>
@@ -108,10 +111,9 @@ export default function UserRegistation({ setOption }) {
           </select>
         </div>
 
-
-        <div className="flex justify-center items-end w-full gap-2">
-          <button className='w-full max-w-[300px] py-[6px] px-8 ring-1 ring-orange-800 bg-orange-800 hover:bg-orange-600 active:bg-violet-700 rounded text-white font-serif text-sm' onClick={setOption}>cancel</button>
-          <input type="submit" value="register" className='w-full max-w-[300px] py-[6px] px-8 ring-1 ring-red-800 bg-red-800 hover:bg-red-600 active:bg-violet-700 rounded text-white font-serif text-sm' />
+        <div className="flex flex-col sm:flex-row justify-between items-center w-full gap-2 mt-[10px] sm:mt-0">
+          <button className='w-full sm:w-[48%] max-w-[300px] py-[6px] px-8 ring-1 ring-orange-800 bg-orange-800 hover:bg-orange-600 active:bg-violet-700 rounded text-white font-serif text-sm' onClick={setOption}>cancel</button>
+          <input type="submit" value="register" className='w-full sm:w-[48%] max-w-[300px] py-[6px] px-8 ring-1 ring-red-800 bg-red-800 hover:bg-red-600 active:bg-violet-700 rounded text-white font-serif text-sm' />
         </div>
       </form>
     </div>
