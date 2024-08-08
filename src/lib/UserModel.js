@@ -69,6 +69,26 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     },
+    completedDonatingUnits:{
+        type:Number,
+        default:0,
+    },
+    pendingDonatingUnits:{
+        type:Number,
+        default:0,
+    },
+    completedReceivingUnits:{
+        type:Number,
+        default:0,
+    },
+    pendingReceivingUnits:{
+        type:Number,
+        default:0,
+    },
+    coins:{
+        type:Number,
+        default:0,
+    },
     createdAt: {
         type: Date,
         default: Date.now

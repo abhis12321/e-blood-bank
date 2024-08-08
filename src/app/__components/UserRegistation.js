@@ -112,8 +112,8 @@ export default function UserRegistation({ setOption }) {
         </div>
 
         <div className="flex flex-col sm:flex-row justify-between items-center w-full gap-2 mt-[10px] sm:mt-0">
-          <button className='w-full sm:w-[48%] max-w-[300px] py-[6px] px-8 ring-1 ring-orange-800 bg-orange-800 hover:bg-orange-600 active:bg-violet-700 rounded text-white font-serif text-sm' onClick={setOption}>cancel</button>
-          <input type="submit" value="register" className='w-full sm:w-[48%] max-w-[300px] py-[6px] px-8 ring-1 ring-red-800 bg-red-800 hover:bg-red-600 active:bg-violet-700 rounded text-white font-serif text-sm' />
+          <div className='w-full sm:w-[48%] max-w-[300px] py-[6px] px-8 ring-2 ring-orange-800 bg-orange-800 hover:bg-orange-600 active:bg-violet-700 rounded text-white font-serif text-sm cursor-pointer' onClick={setOption}>cancel</div>
+          <input type="submit" value="register" className='w-full sm:w-[48%] max-w-[300px] py-[6px] px-8 ring-2 ring-red-800 bg-red-800 hover:bg-red-600 active:bg-violet-700 rounded text-white font-serif text-sm cursor-pointer' />
         </div>
       </form>
     </div>
