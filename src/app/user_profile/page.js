@@ -7,6 +7,7 @@ import { useAuthentication } from '../__components/AuthenticationProvider';
 import UserProfile from '../__components/UserProfile';
 import UserLogout from '../__components/UserLogout';
 import RequestToDonate from '../__components/RequestToDonate';
+import RequestToBeDonated from '../__components/RequestToBeDonated';
 
 export default function page() {
   const [option, setOption] = useState(0);
@@ -17,8 +18,9 @@ export default function page() {
       {
         USER?.user ?
           (option == 3 ? <UserLogout USER={USER} setOption={setOption} />
-            : option == 4 ? <RequestToDonate user={USER?.user} setOption={setOption} />
-            : <UserProfile user={USER?.user} setOption={setOption} />)
+            : option == 0 ? <UserProfile user={USER?.user} setOption={setOption} />
+              : option == 4 ? <RequestToDonate user={USER?.user} setOption={setOption} />
+                : <RequestToBeDonated user={USER?.user} setOption={setOption} />)
           :
           option == 0 ? <UserLogin setOption={setOption} USER={USER} />
             :
