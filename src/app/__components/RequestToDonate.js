@@ -21,8 +21,8 @@ export default function RequestToDonate({ user, setOption }) {
                     <input type="number" value={unitsToDonate} onChange={(e) => setUnitsToDonate(Math.max(0, Math.min(5, e.target.value)))} className='bg-blue-950/10 py-2 px-6 rounded text-center outline-none focus:bg-green-600/15 ring-1 focus:ring-2 ring-violet-700 focus:shadow-[0_0_15px_brown_inset] placeholder:text-gray-600' placeholder='how many units of blood you want to donate' name='blood-units-to-donate' required />
                 </div>
                 <div className="flex gap-2 items-center justify-evenly font-mono font-bold text-white">
-                    <div className='w-[120px] xs:w-[150px] text-center rounded-md bg-orange-900/95 py-[6px] hover:bg-orange-700' onClick={() => setOption(0)}>cancel</div>
-                    <button type='submit' className='w-[120px] xs:w-[150px] text-center rounded-md bg-red-900/95 py-[6px] hover:bg-red-700' >submit</button>
+                    <div className='w-[128px] text-center rounded-md bg-orange-900/95 py-[6px] hover:bg-orange-700' onClick={() => setOption(0)}>cancel</div>
+                    <button type='submit' className='w-[128px] text-center rounded-md bg-red-900/95 py-[6px] hover:bg-red-700' >submit</button>
                 </div>
             </form>
         </div>

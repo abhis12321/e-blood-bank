@@ -5,6 +5,20 @@
   .text-balance {
     text-wrap: balance;
   }
+  .animate-fade {
+    animation: fading-out 6000ms linear infinite;
+  }
+  @keyframes fading-out {
+    0% {
+      opacity: 70%;
+    } 20% {
+      opacity: 100%;
+    } 80% {
+      opacity: 100%;
+    } 100% {
+      opacity: 70%;
+    }
+  }
 }
 
 .bg-100_100 {
