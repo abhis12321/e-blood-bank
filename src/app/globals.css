@@ -6,3 +6,7 @@
     text-wrap: balance;
   }
 }
+
+.bg-100_100 {
+  background-size: 100px 100px;
+}

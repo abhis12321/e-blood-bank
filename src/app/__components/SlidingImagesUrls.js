@@ -1,1 +1,1 @@
-export  const SlidingImagesUrls = ["home_page_sliders/slider0.png", "home_page_sliders/slider1.png", "home_page_sliders/slider2.png", "home_page_sliders/slider3.png", "home_page_sliders/slider4.png", "home_page_sliders/slider5.png", "home_page_sliders/slider5.png", ];
+export  const SlidingImagesUrls = ["home_page_sliders/slider0.png", "home_page_sliders/slider1.png", "home_page_sliders/slider2.png", "home_page_sliders/slider3.png", "home_page_sliders/slider4.png", "home_page_sliders/slider5.png", "home_page_sliders/slider6.png", ];
