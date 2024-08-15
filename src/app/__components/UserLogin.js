@@ -12,7 +12,7 @@ export default function UserLogin({ setOption , USER }) {
     }
 
   return (
-    <div className='w-full min-h-[calc(100vh-4rem)] flex flex-col gap-4 items-center justify-center overflow-auto py-4'>      
+    <div className='w-full min-h-[calc(100vh-70px)] flex flex-col gap-4 items-center justify-center overflow-auto py-4'>      
       <h2 className="font-extrabold text-4xl text-center rounded-md text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-violet-600 w-fit pb-2 leading-12 drop-shadow-[0_0_1px_black]">Login Page</h2>
       <form onSubmit={handleLogin} className='bg-blue-50 shadow-[0_0_10px_black] w-[98%] max-w-[500px] py-4 px-5 rounded-2xl min-h-[280px] text-red-950 flex flex-col items-center justify-evenly' autoComplete='on'>
 

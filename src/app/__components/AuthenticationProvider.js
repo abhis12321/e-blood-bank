@@ -1,23 +1,29 @@
 "use client"
 import axios from 'axios';
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 const Auth_context = createContext()
 
-export default function AuthenticationProvider( {children} ) {
-    const [user , setUser] = useState();
+export default function AuthenticationProvider({ children }) {
+  const [user, setUser] = useState();
 
-    const logout = () => {
-        setUser();
-    }
+  const logout = () => {    
+    setUser();
+    localStorage.removeItem("e-blood-bank");
+  }
 
-    const login = (data) => {        
-      axios.put(`/api/users` , data)
+  const login = ({ email, password }) => {
+    axios.put(`/api/users`, { email, password })
       .then(res => res.data)
-      .then(data => data.success ? setUser(data.user) : alert(data.message))
+      .then(data => data.success ? (setUser(data.user) | localStorage.setItem('e-blood-bank', JSON.stringify({email , password}))) : alert(data.message))
       .catch(error => console.log(error.message));
-    }
+  }
 
-    const value = { user , logout , login };
+  useEffect(() => {
+    let data = JSON.parse(localStorage.getItem("e-blood-bank"));
+    data && login(data);
+  }, []);
+
+  const value = { user, logout, login };
 
   return (
     <Auth_context.Provider value={value}>
@@ -28,5 +34,5 @@ export default function AuthenticationProvider( {children} ) {
 
 
 export const useAuthentication = () => {
-    return useContext(Auth_context);
+  return useContext(Auth_context);
 }

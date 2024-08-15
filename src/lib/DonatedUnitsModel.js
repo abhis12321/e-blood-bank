@@ -11,7 +11,10 @@ const donatedUnitsSchema = new mongoose.Schema({
     },
     donatedTo:{
         type:mongoose.Schema.Types.ObjectId,
-        required:[true , "where or to whom the units were donated is missings."]
+    },
+    status:{
+        type:Boolean,
+        default:false,
     },
     date:{
         type:Date,
@@ -19,4 +22,4 @@ const donatedUnitsSchema = new mongoose.Schema({
     }
 });
 
-export const donatedUnit = mongoose.models.DonatedUnit || mongoose.model("DonatedUnit" , donatedUnitsSchema);
+export const DonatedUnit = mongoose.models.DonatedUnit || mongoose.model("DonatedUnit" , donatedUnitsSchema);
