@@ -28,7 +28,7 @@ export default function ImageSlider() {
             <div className="absolute max-w-[98%] text-red-600 flex flex-col items-center p-4 rounded-md backdrop-opacity-10 backdrop-invert bg-white/20 *:drop-shadow-[3px_3px_1px_orange]">
                 <h1 className="text-[3rem] font-extrabold font-serif">Let's save lives</h1>
                 <h2 className="text-3xl">A fraction of your blood can save someone&apos;s life</h2>
-                <Link href={'/user_profile'} className='my-2 text-white bg-red-600 py-1 px-4 rounded-lg hover:bg-red-800 hover:underline'>donate -&gt;</Link>
+                <Link href={'/user_profile'} className='my-2 text-white bg-red-600 py-1 px-4 rounded-lg hover:bg-red-800 hover:underline'>donate &gt;</Link>
             </div>
         </div>
     )

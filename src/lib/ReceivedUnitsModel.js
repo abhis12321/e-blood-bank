@@ -24,8 +24,11 @@ const receivedUnitsSchema = new mongoose.Schema({
     donorId:{
         type:mongoose.Schema.Types.ObjectId,
     },
+    donorName:{
+        type:String,
+    },
     paymentId:{
-        default:0,
+        type:mongoose.Schema.Types.ObjectId,
     },
     status:{
         type:Boolean,

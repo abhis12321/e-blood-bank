@@ -9,6 +9,7 @@ import UserLogout from '../__components/UserLogout';
 import Donations from '../__components/Donations';
 import DonationForm from '../__components/DonationForm';
 import ReceivingForm from '../__components/ReceivingForm';
+import Receivings from '../__components/Receivings';
 
 export default function page() {
   const [option, setOption] = useState(-1);
@@ -34,8 +35,9 @@ export default function page() {
           (option == 0 ? <UserProfile user={USER?.user} setOption={setOption} />
             : option == 1 ? <UserLogout USER={USER} setOption={setOption} />
               : option == 2 ? <Donations donorId={USER?.user._id} setOption={setOption} />
-                : option == 4 ? <DonationForm user={USER?.user} setOption={setOption} />
-                  : <ReceivingForm user={USER?.user} setOption={setOption} />)
+                : option === 3 ? <Receivings receiverId={USER?.user?._id} setOption={setOption} />
+                  : option == 4 ? <DonationForm user={USER?.user} setOption={setOption} />
+                    : option == 5 && <ReceivingForm user={USER?.user} setOption={setOption} />)
           :
           option == 0 ? <UserLogin setOption={setOption} USER={USER} />
             :
