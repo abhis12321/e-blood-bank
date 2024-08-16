@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function RequestToBeDonated({ user, setOption }) {
+export default function ReceivingForm({ user, setOption }) {
     const [unitsToDonate, setUnitsToDonate] = useState(0);
     const handleWannaDonate = e => {
         e.preventDefault();

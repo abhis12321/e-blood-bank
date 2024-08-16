@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 
 export default function RequestToDonate({ user, setOption }) {
-    const [donatedUnits, setUnitsToDonate] = useState(0);
+    const [donatedUnits, setUnitsToDonate] = useState(1);
     const handleWannaDonate = e => {
         e.preventDefault();
         const body = {donatedUnits , donorId:user._id };
@@ -25,7 +25,7 @@ export default function RequestToDonate({ user, setOption }) {
 
                 <div className="flex flex-col justify-center">
                     <label htmlFor="phoneNo" className='text-[10px] font-semibold text-violet-800/70 after:content-["*"] after:ml-0.5 after:text-red-500/90 after:text-[.8rem]'>Units of blood you want to donate</label>
-                    <input type="number" value={donatedUnits} onChange={(e) => setUnitsToDonate(Math.max(0, Math.min(5, e.target.value)))} className='bg-blue-950/10 py-2 px-6 rounded text-center outline-none focus:bg-green-600/15 ring-1 focus:ring-2 ring-violet-700 focus:shadow-[0_0_15px_brown_inset] placeholder:text-gray-600' placeholder='how many units of blood you want to donate' name='blood-units-to-donate' required />
+                    <input type="number" value={donatedUnits} onChange={(e) => setUnitsToDonate(Math.max(1, Math.min(5, e.target.value)))} className='bg-blue-950/10 py-2 px-6 rounded text-center outline-none focus:bg-green-600/15 ring-1 focus:ring-2 ring-violet-700 focus:shadow-[0_0_15px_brown_inset] placeholder:text-gray-600' placeholder='how many units of blood you want to donate' name='blood-units-to-donate' required />
                 </div>
                 <div className="flex gap-2 items-center justify-evenly font-mono font-bold text-white">
                     <div className='w-[128px] text-center rounded-md bg-orange-900/95 py-[6px] hover:bg-orange-700' onClick={() => setOption(0)}>cancel</div>

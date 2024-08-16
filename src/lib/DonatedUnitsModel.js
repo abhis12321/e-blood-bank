@@ -12,6 +12,9 @@ const donatedUnitsSchema = new mongoose.Schema({
     receiverId:{
         type:mongoose.Schema.Types.ObjectId,
     },
+    receiverName:{
+        type:String,
+    },
     status:{
         type:Boolean,
         default:false,
