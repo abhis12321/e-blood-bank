@@ -3,6 +3,14 @@ import React, { useEffect, useState } from 'react'
 
 export default function Receivings({ setOption, receiverId }) {
     const [receivers, setReceivers] = useState();
+
+    useEffect(() => {
+        axios.get(`/api/receiver/${receiverId}`)
+        .then(res => res.data)
+        .then(data => data.success && setReceivers(data.receivers))
+        .catch(error => console.log(error.message))
+    } , []);
+
     return (
         <div className='w-full min-h-[calc(100vh-70px)] flex flex-col gap-4 items-center justify-center overflow-auto py-4 bg-green-50'>
             <div className="flex gap-4">
