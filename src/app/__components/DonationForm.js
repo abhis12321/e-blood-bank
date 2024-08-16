@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 
-export default function RequestToDonate({ user, setOption }) {
+export default function DonationForm({ user, setOption }) {
     const [donatedUnits, setUnitsToDonate] = useState(1);
     const handleWannaDonate = e => {
         e.preventDefault();
