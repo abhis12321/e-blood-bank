@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const receivedUnitsSchema = new mongoose.Schema({
-    receiverRoleId:{
+    receiverId:{
         type:mongoose.Schema.Types.ObjectId,
         required:[true , "Invalid request, Try again."],
     },
@@ -9,31 +9,32 @@ const receivedUnitsSchema = new mongoose.Schema({
         type:Number,
         required:[true , "number of units received is missing."],
     },
-    receivedFrom:{
-        type:mongoose.Schema.Types.ObjectId,
-        required:[true , "from where or from whom the units were received is missings."]
-    },
     prescription:{
         type:String,
         required:[true , "prescription is missing."],
     },
     prescribedBy:{
         type:String,
-        required:[true , "who have prescribed ? is missing."],
+        required:[true , "who have prescribed (ie. Doctor name)? is missing."],
     },
     hospitalName:{
         type:String,
         required:[true , "Hospital name is missing."],
     },
-    paymentId:{
+    donorId:{
         type:mongoose.Schema.Types.ObjectId,
+    },
+    paymentId:{
         default:0,
+    },
+    status:{
+        type:Boolean,
+        default:false,
     },
     date:{
         type:Date,
         default:Date.now,
     }
 });
-
-
+receivedUnitsSchema.index({ receiverId: 1 }, { unique: true, partialFilterExpression: { status: false } });
 export const ReceivedUnit = mongoose.models.ReceivedUnit || mongoose.model("ReceivedUnit" , receivedUnitsSchema);

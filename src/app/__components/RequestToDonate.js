@@ -5,7 +5,7 @@ export default function RequestToDonate({ user, setOption }) {
     const [donatedUnits, setUnitsToDonate] = useState(0);
     const handleWannaDonate = e => {
         e.preventDefault();
-        const body = {donatedUnits , donorRoleId:user._id };
+        const body = {donatedUnits , donorId:user._id };
         axios.post("/api/donor" , body)
             .then(result => result.data)
             .then(data => alert(data.message))

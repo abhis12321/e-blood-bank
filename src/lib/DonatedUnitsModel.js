@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const donatedUnitsSchema = new mongoose.Schema({
-    donorRoleId:{
+    donorId:{
         type:mongoose.Schema.Types.ObjectId,
         required:[true , "Invalid request, Try again."],
     },
@@ -9,7 +9,7 @@ const donatedUnitsSchema = new mongoose.Schema({
         type:Number,
         required:[true , "number of units to be donated is missing."],
     },
-    donatedTo:{
+    receiverId:{
         type:mongoose.Schema.Types.ObjectId,
     },
     status:{
@@ -21,5 +21,5 @@ const donatedUnitsSchema = new mongoose.Schema({
         default:Date.now,
     }
 });
-
+donatedUnitsSchema.index({ donorId: 1 }, { unique: true, partialFilterExpression: { status: false } });
 export const DonatedUnit = mongoose.models.DonatedUnit || mongoose.model("DonatedUnit" , donatedUnitsSchema);

@@ -4,6 +4,7 @@ export default function RequestToBeDonated({ user, setOption }) {
     const [unitsToDonate, setUnitsToDonate] = useState(0);
     const handleWannaDonate = e => {
         e.preventDefault();
+        setOption(0)
     }
 
     return (
