@@ -6,8 +6,8 @@ import UserLogin from '../__components/UserLogin';
 import { useAuthentication } from '../__components/AuthenticationProvider';
 import UserProfile from '../__components/UserProfile';
 import UserLogout from '../__components/UserLogout';
-import RequestToDonate from '../__components/RequestToDonate';
-import RequestToBeDonated from '../__components/RequestToBeDonated';
+import RequestToDonate from '../__components/DonationForm';
+import RequestToBeDonated from '../__components/ReceivingForm';
 
 export default function page() {
   const [option, setOption] = useState(-1);
