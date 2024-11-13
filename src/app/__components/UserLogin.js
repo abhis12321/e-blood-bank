@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
+import { useAuthentication } from './AuthenticationProvider';
 
-export default function UserLogin({ setOption , USER }) {
+export default function UserLogin({ setOption }) {
+  const { login } = useAuthentication();
     const [email , setEmail] = useState('');
     const [password , setPassword] = useState('');
 
     const handleLogin = e => {
       e.preventDefault();
       const data = { email , password };
-      USER.login(data);
-      // console.log(USER);      
+      login(data);
     }
 
   return (

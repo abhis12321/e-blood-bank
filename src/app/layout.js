@@ -1,7 +1,8 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
-import AuthenticationProvider from "./__components/AuthenticationProvider";
+import { Inter } from "next/font/google";
 import NavBar from "./__components/NavBar";
+import { getJWTUser } from "@/serverUtilities/getJWTUser";
+import AuthenticationProvider from "./__components/AuthenticationProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,9 +12,10 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const initialUser = getJWTUser();
   return (
     <html lang="en">
-      <AuthenticationProvider>
+      <AuthenticationProvider initialUser={initialUser}>
         <body className={`${inter.className} bg-gray-100`}>
           <NavBar />
           {children}

@@ -6,21 +6,28 @@
     text-wrap: balance;
   }
   .animate-fade {
-    animation: fading-out 6000ms linear infinite;
+    animation: fading-out 5500ms linear infinite;
   }
   @keyframes fading-out {
     0% {
-      opacity: 70%;
-    } 20% {
+      opacity: 50%;
+    }
+    20% {
       opacity: 100%;
-    } 80% {
+    }
+    80% {
       opacity: 100%;
-    } 100% {
-      opacity: 70%;
+    }
+    100% {
+      opacity: 50%;
     }
   }
-}
 
-.bg-100_100 {
-  background-size: 100px 100px;
+  .bg-100_100 {
+    background-size: 100px 100px;
+  }
+
+  .h-nav {
+    min-height: calc(100vh - 70px);
+  }
 }

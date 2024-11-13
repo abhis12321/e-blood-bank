@@ -11,7 +11,7 @@ export default function ReceivingForm({ user, setOption }) {
         if (receivedUnits) {
             axios.post("/api/receiver", { receiverId: user._id, receivedUnits, prescribedBy, hospitalName, prescription: "prescription" })
                 .then(res => res.data)
-                .then(data => console.log(data))
+                .then(data => alert(data.message))
                 .catch(error => console.log(error.message))
             setOption(0)
         }

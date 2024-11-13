@@ -19,6 +19,10 @@ const donatedUnitsSchema = new mongoose.Schema({
         type:Boolean,
         default:false,
     },
+    verified:{
+        type:Boolean,
+        default:false,
+    },
     date:{
         type:Date,
         default:Date.now,

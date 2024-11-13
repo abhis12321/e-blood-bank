@@ -1,7 +1,7 @@
 "use client"
 
 import axios from 'axios';
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 export default function UserRegistation({ setOption }) {
   const [name, setName] = useState('');
@@ -112,8 +112,8 @@ export default function UserRegistation({ setOption }) {
         </div>
 
         <div className="flex flex-col sm:flex-row justify-between items-center w-full gap-2 mt-[10px] sm:mt-0">
-          <div className='w-full sm:w-[48%] max-w-[300px] py-[6px] px-8 ring-2 ring-orange-800 bg-orange-800 hover:bg-orange-600 active:bg-violet-700 rounded text-white font-serif text-sm cursor-pointer' onClick={setOption}>cancel</div>
-          <input type="submit" value="register" className='w-full sm:w-[48%] max-w-[300px] py-[6px] px-8 ring-2 ring-red-800 bg-red-800 hover:bg-red-600 active:bg-violet-700 rounded text-white font-serif text-sm cursor-pointer' />
+          <div className='w-full sm:w-[48%] max-w-[300px] py-[6px] px-8 text-center ring-2 ring-orange-800 bg-orange-800 hover:bg-orange-600 active:bg-violet-700 rounded text-white font-serif text-sm cursor-pointer' onClick={setOption}>cancel</div>
+          <input type="submit" value="register" className='w-full sm:w-[48%] max-w-[300px] py-[6px] px-8 text-center ring-2 ring-red-800 bg-red-800 hover:bg-red-600 active:bg-violet-700 rounded text-white font-serif text-sm cursor-pointer' />
         </div>
       </form>
     </div>

@@ -1,15 +1,19 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function Receivings({ setOption, receiverId }) {
     const [receivers, setReceivers] = useState();
 
     useEffect(() => {
+        loadReceivings();
+    } , []);
+
+    const loadReceivings = () => {
         axios.get(`/api/receiver/${receiverId}`)
         .then(res => res.data)
-        .then(data => data.success && setReceivers(data.receivers))
+        .then(data => data.success ? setReceivers(data.receivers) : setReceivers([]))
         .catch(error => console.log(error.message))
-    } , []);
+    }
 
     return (
         <div className='w-full min-h-[calc(100vh-70px)] flex flex-col gap-4 items-center justify-center overflow-auto py-4 bg-green-50'>
@@ -18,7 +22,7 @@ export default function Receivings({ setOption, receiverId }) {
                 <button className="ring-2 ring-blue-700 bg-blue-700/40 text-blue-700 w-[130px] text-center py-[2px] rounded-lg font-semibold hover:bg-blue-700 hover:text-white" onClick={() => setOption(5)}>new request</button>
             </div>
             {
-                receivers ?
+                receivers ? receivers?.length > 0 ?
                     <table className="border-2 border-black">
                         <thead>
                             <tr className="bg-slate-900/20">
@@ -49,6 +53,8 @@ export default function Receivings({ setOption, receiverId }) {
                     </table>
                     :
                     <div className="text-4xl font-bold text-gray-500">No records found</div>
+                    :
+                    <div className='h-20 w-20 rounded-full border-t-4 border-gray-800 animate-spin' />
             }
         </div>
     )

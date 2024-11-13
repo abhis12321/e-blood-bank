@@ -1,16 +1,20 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function Donations({ setOption, donorId }) {
     const [donations, setDonations] = useState();
 
     useEffect(() => {
+        loadDonations();
+    }, [])
+
+    const loadDonations = () => {        
         axios.get(`/api/donor/${donorId}`)
             .then(res => res.data)
-            .then(data => data.success && setDonations(data?.donations))
+            .then(data => data.success ? setDonations(data?.donations) : setDonations([]))
             .catch(error => console.log(error.message))
-    }, [])
-    
+    }
+
     return (
         <div className='w-full min-h-[calc(100vh-70px)] flex flex-col gap-4 items-center justify-center overflow-auto py-4 bg-green-50'>
             <div className="flex gap-4 text-sm">
@@ -18,7 +22,7 @@ export default function Donations({ setOption, donorId }) {
                 <button className="ring-2 ring-blue-700 bg-blue-700/40 text-blue-700 w-[130px] text-center py-[3px] rounded-lg font-semibold hover:bg-blue-700 hover:text-white" onClick={() => setOption(4)}>donate</button>
             </div>
             {
-                donations ?
+                donations ? donations?.length > 0 ?
                     <table className="border-2 border-black">
                         <thead>
                             <tr className="bg-slate-900/20">
@@ -45,6 +49,8 @@ export default function Donations({ setOption, donorId }) {
                     </table>
                     :
                     <div className="text-4xl font-bold text-gray-500">No records found</div>
+                    :
+                    <div className='h-20 w-20 rounded-full border-t-4 border-gray-800 animate-spin'></div>
             }
         </div>
     )
