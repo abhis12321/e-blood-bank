@@ -3,7 +3,7 @@ import ImageSlider from './__components/ImageSlider'
 
 export default function page() {
   return (
-    <div className=''>
+    <div className='h-nav'>
       <ImageSlider />
     </div>
   )

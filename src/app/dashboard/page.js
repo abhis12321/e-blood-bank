@@ -16,7 +16,7 @@ export default function page() {
   const { user } = useAuthentication();
 
   return (
-    <div className='min-h-[calc(100vh-70px)] w-full flex items-center justify-center bg-black/20'>
+    <div className='h-nav w-full flex items-center justify-center bg-red-50'>
       {
       user ?
           (option == 0 ? <UserProfile setOption={setOption} />

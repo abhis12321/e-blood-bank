@@ -49,8 +49,8 @@ export default function UserRegistation({ setOption }) {
   }
 
   return (
-    <div className='w-full min-h-[calc(100vh-70px)] flex items-center justify-center overflow-auto py-4'>
-      <form className="flex flex-wrap sm:gap-2 items-center justify-center sm:justify-between py-4 px-3 sm:px-5 lg:px-8 w-[98%] xs:w-[80%] sm:w-full max-w-[645px] bg-white rounded-md shadow-[1px_7px_15px_black_inset]" onSubmit={handleSubmit}>
+    <div className='h-nav w-full flex items-center justify-center overflow-auto py-4'>
+      <form className="flex flex-wrap sm:gap-2 items-center justify-center sm:justify-between pt-4 pb-6 px-3 sm:px-5 lg:px-8 w-[98%] xs:w-[80%] sm:w-full max-w-[645px] bg-white rounded-md shadow-[1px_1px_5px_black]" onSubmit={handleSubmit}>
         <div className="w-full text-2xl font-mono font-extrabold text-center text-red-950">Enter your details</div>
         <div className="flex flex-col justify-center w-full sm:w-[48%] max-w-[300px]">
           <label htmlFor="name" className='text-[10px] font-semibold text-violet-800/70 after:content-["*"] after:ml-0.5 after:text-red-500/90 after:text-[.8rem]'>name</label>

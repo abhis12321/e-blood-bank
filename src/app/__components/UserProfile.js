@@ -5,7 +5,7 @@ export default function UserProfile({ setOption }) {
   const date = new Date(user?.DoB);
   
   return (
-    <div className='w-full min-h-[calc(100vh-70px)] flex flex-col gap-4 items-center justify-center overflow-auto py-4'>
+    <div className='h-nav w-full flex flex-col gap-4 items-center justify-center overflow-auto py-4'>
       <div className="bg-blue-50 shadow-[0_0_10px_black_inset] w-[98%] max-w-[500px] p-6 rounded-2xl min-h-[280px] text-red-950 flex flex-col gap-2 items-start justify-evenly">
         <div className=""><span className="">Name : </span> <span className="font-bold text-red-950">{user?.name}</span></div>
         <div className=""><span className="">Email : </span><span className="font-bold text-red-950">{user?.email}</span></div>

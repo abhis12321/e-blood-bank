@@ -14,7 +14,7 @@ export default function DonationForm({ user, setOption }) {
     }
 
     return (
-        <div className='w-full min-h-[calc(100vh-70px)] flex flex-col gap-4 items-center justify-center overflow-auto py-4'>
+        <div className='h-nav w-full flex flex-col gap-4 items-center justify-center overflow-auto py-4'>
             <form onSubmit={handleWannaDonate} className='bg-blue-50 shadow-[0_0_10px_black] w-[98%] max-w-[500px] py-4 px-5 rounded-2xl min-h-[280px] text-gray-700 flex flex-col items-center justify-evenly gap-2' autoComplete='on'>
                 <div className=""><span className="">Name : </span> <span className="font-bold text-red-950">{user?.name}</span></div>
                 <div className=""><span className="">Email : </span><span className="font-bold text-red-950">{user?.email}</span></div>
